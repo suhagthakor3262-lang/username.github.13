@@ -77,6 +77,84 @@
                 <input type="text" class="vip-search-input" id="vipSearchField" placeholder="Search any yono game..." onkeyup="filterApps()">
                 <button class="vip-search-btn" onclick="filterApps()">🔍</button>
             </div>
+<!-- START: TOP PROMO CODE STRIP SECTION -->
+<style>
+    .top-promo-strip {
+        background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+        border: 1.5px solid #2563eb;
+        border-radius: 12px;
+        padding: 10px 14px;
+        margin: 8px 0 12px 0; /* हेडर और सर्च बार के बीच का गैप कवर करने के लिए */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        box-shadow: 0 3px 10px rgba(37, 99, 235, 0.12);
+        color: #ffffff;
+    }
+    .promo-strip-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .promo-icon-badge {
+        background: #ffffff;
+        color: #2563eb;
+        font-size: 14px;
+        font-weight: 900;
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    .promo-text-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .promo-title-text {
+        font-size: 13px;
+        font-weight: 800;
+        color: #ffffff;
+        line-height: 1.2;
+    }
+    .promo-subtitle-text {
+        font-size: 10.5px;
+        color: #bfdbfe;
+        font-weight: 600;
+    }
+    .promo-action-btn {
+        background: #ffffff;
+        color: #2563eb;
+        font-size: 11px;
+        font-weight: 800;
+        padding: 7px 12px;
+        border-radius: 8px;
+        text-decoration: none;
+        text-transform: uppercase;
+        white-space: nowrap;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: transform 0.2s ease;
+    }
+    .promo-action-btn:active {
+        transform: scale(0.96);
+    }
+</style>
+
+<div class="top-promo-strip">
+    <div class="promo-strip-left">
+        <div class="promo-icon-badge">🎁</div>
+        <div class="promo-text-content">
+            <span class="promo-title-text">Daily Fresh Promo Codes</span>
+            <span class="promo-subtitle-text">Get today's working code</span>
+        </div>
+    </div>
+    <!-- ध्यान दें: 'promo-code.html' वाले लिंक को बाद में हम आपकी नई फ़ाइल से कनेक्ट कर देंगे -->
+    <a href="promo-code.html" class="promo-action-btn">GET CODE</a>
+</div>
+<!-- END: TOP PROMO CODE STRIP SECTION -->
 
             <!-- Dynamic Background Countdown Component (13 Days Target Locked) -->
             <div class="vip-countdown-box" id="winRummyTimerWidget">
