@@ -3,115 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Promo Codes - PROSAFEYONOGAME2026</title>
+    <title>Daily Active Promo Codes - PROSAFEYONOGAME</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        body { background-color: #f3f4f6; color: #111827; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; }
-        
+        body { background-color: #f3f4f6; color: #111827; min-height: 100vh; padding-bottom: 30px; }
+
+        /* Header Bar */
+        header { background: #ffffff; border-bottom: 2px solid #2563eb; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .nav-container { max-width: 600px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; }
+        .site-brand-name { font-size: 16px; font-weight: 800; color: #1e3a8a; text-decoration: none; }
+        .back-home-link { background: #2563eb; color: #ffffff; text-decoration: none; font-size: 11px; font-weight: 800; padding: 6px 12px; border-radius: 6px; }
+
+        /* Main Container */
+        .promo-container { max-width: 600px; margin: 0 auto; padding: 12px; }
+
+        /* Global 24 Hours Countdown Timer Box */
+        .global-timer-card {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            border-radius: 14px;
+            padding: 14px;
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+        .timer-title { font-size: 12px; font-weight: 700; color: #bfdbfe; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+        .timer-display { display: flex; justify-content: center; align-items: center; gap: 8px; font-size: 20px; font-weight: 900; }
+        .timer-unit { background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); padding: 4px 10px; border-radius: 8px; min-width: 42px; }
+
+        /* Promo Cards Grid (2 Columns like Image) */
+        .promo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+        /* Individual Card Item */
         .promo-card {
             background: #ffffff;
-            border: 2px solid #2563eb;
-            border-radius: 18px;
-            max-width: 480px;
-            width: 100%;
-            padding: 30px 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 12px 8px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
-        }
-
-        .promo-icon-box {
-            background: #eff6ff;
-            border: 1px solid #bfdbfe;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            margin: 0 auto 16px auto;
+            justify-content: space-between;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
         }
 
-        .promo-badge {
-            display: inline-block;
-            background: #dc2626;
-            color: #ffffff;
-            font-size: 11px;
-            font-weight: 800;
-            padding: 4px 12px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            margin-bottom: 12px;
-            animation: pulseGlow 1.5s infinite ease-in-out;
-        }
+        .game-icon { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; border: 1px solid #e5e7eb; margin-bottom: 6px; }
+        .game-title { font-size: 12px; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 8px; height: 28px; display: flex; align-items: center; justify-content: center; }
 
-        @keyframes pulseGlow {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .promo-heading {
-            font-size: 22px;
-            font-weight: 800;
-            color: #1e3a8a;
-            margin-bottom: 8px;
-        }
-
-        .promo-subtext {
-            font-size: 13.5px;
-            color: #4b5563;
-            line-height: 1.5;
-            margin-bottom: 24px;
-        }
-
-        .code-preview-box {
-            background: #f8fafc;
-            border: 1.5px dashed #2563eb;
-            border-radius: 12px;
-            padding: 14px;
-            font-size: 16px;
-            font-weight: 800;
+        /* Promo Code Box */
+        .code-box-wrapper { background: #eff6ff; border: 1.5px dashed #2563eb; border-radius: 8px; padding: 6px; width: 100%; margin-bottom: 8px; }
+        .code-text { font-size: 11px; font-weight: 800; color: #2563eb; word-break: break-all; letter-spacing: 0.5px; margin-bottom: 4px; display: block; }
+        
+        .copy-btn {
+            background: #ffffff;
             color: #2563eb;
-            letter-spacing: 2px;
-            margin-bottom: 24px;
+            border: 1px solid #2563eb;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 4px 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.2s;
         }
+        .copy-btn.copied { background: #16a34a; color: #ffffff; border-color: #16a34a; }
 
-        .back-home-btn {
-            display: inline-block;
+        /* Download Button */
+        .download-btn {
+            display: block;
             width: 100%;
             background: #2563eb;
             color: #ffffff;
-            font-size: 13px;
+            font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
             text-decoration: none;
-            padding: 12px 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
-            transition: background 0.2s;
-        }
-
-        .back-home-btn:hover {
-            background: #1d4ed8;
+            padding: 8px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+            margin-top: 4px;
         }
     </style>
 </head>
 <body>
 
-    <div class="promo-card">
-        <div class="promo-icon-box">🎁</div>
-        <span class="promo-badge">COMING SOON</span>
-        <h1 class="promo-heading">Daily Fresh Promo Codes</h1>
-        <p class="promo-subtext">We are preparing today's active bonus promo codes for you. Check back shortly to claim your free reward!</p>
-        
-        <div class="code-preview-box">
-            PROMO-CODE-2026-XXXX
+    <!-- Top Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="site-brand-name">PROSAFEYONOGAME</a>
+            <a href="index.html" class="back-home-link">🏡 HOME</a>
+        </div>
+    </header>
+
+    <div class="promo-container">
+
+        <!-- Global 24h Countdown Timer Header -->
+        <div class="global-timer-card">
+            <div class="timer-title">⏳ ALL PROMO CODES EXPIRE IN</div>
+            <div class="timer-display">
+                <span class="timer-unit" id="hours">23</span> :
+                <span class="timer-unit" id="minutes">59</span> :
+                <span class="timer-unit" id="seconds">59</span>
+            </div>
         </div>
 
-        <a href="index.html" class="back-home-btn">🏡 Return To Home</a>
+        <!-- 2-Column Promo Code Grid -->
+        <div class="promo-grid">
+
+            <!-- Card 1: Max Rummy -->
+            <div class="promo-card">
+                <img src="https://i.ibb.co/vx3JSHvL/IMG-20260709-090606-552.jpg" class="game-icon" alt="Max Rummy">
+                <div class="game-title">MAX RUMMY</div>
+                <div class="code-box-wrapper">
+                    <span class="code-text" id="code1">MAXBONUS2026</span>
+                    <button class="copy-btn" onclick="copyCode('code1', this)">Click to Copy</button>
+                </div>
+                <a href="max-rummy.html" class="download-btn">Download Now</a>
+            </div>
+
+            <!-- Card 2: Dhan Game -->
+            <div class="promo-card">
+                <img src="https://i.ibb.co/MknBcYh4/IMG-20260723-075159-651.jpg" class="game-icon" alt="Dhan Game">
+                <div class="game-title">DHAN GAME</div>
+                <div class="code-box-wrapper">
+                    <span class="code-text" id="code2">DHANGAME2026</span>
+                    <button class="copy-btn" onclick="copyCode('code2', this)">Click to Copy</button>
+                </div>
+                <a href="dhan-game.html" class="download-btn">Download Now</a>
+            </div>
+
+            <!-- Card 3: Win Rummy -->
+            <div class="promo-card">
+                <img src="https://i.ibb.co/MFCpD0v/IMG-20260729-083044-255.jpg" class="game-icon" alt="Win Rummy">
+                <div class="game-title">WIN RUMMY</div>
+                <div class="code-box-wrapper">
+                    <span class="code-text" id="code3">WINRUMMY2026</span>
+                    <button class="copy-btn" onclick="copyCode('code3', this)">Click to Copy</button>
+                </div>
+                <a href="win-rummy.html" class="download-btn">Download Now</a>
+            </div>
+
+            <!-- Card 4: Yono Rummy -->
+            <div class="promo-card">
+                <img src="https://i.ibb.co/XxTS3tdZ/Screenshot-2026-0524-121950.png" class="game-icon" alt="Yono Rummy">
+                <div class="game-title">YONO RUMMY</div>
+                <div class="code-box-wrapper">
+                    <span class="code-text" id="code4">YONOBONUS2026</span>
+                    <button class="copy-btn" onclick="copyCode('code4', this)">Click to Copy</button>
+                </div>
+                <a href="yono-rummy.html" class="download-btn">Download Now</a>
+            </div>
+
+        </div>
     </div>
 
+    <!-- JavaScript Logic: 24h Repeating Timer & Click-to-Copy -->
+    <script>
+        // 1. Auto-Looping 24-Hour Countdown Logic
+        function update24hTimer() {
+            const now = new Date();
+            // Calculate remaining time until midnight (next 24h reset)
+            const hours = 23 - now.getHours();
+            const minutes = 59 - now.getMinutes();
+            const seconds = 59 - now.getSeconds();
+
+            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+
+        setInterval(update24hTimer, 1000);
+        update24hTimer();
+
+        // 2. Click to Copy Functionality
+        function copyCode(elementId, btnElement) {
+            const codeText = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(codeText).then(() => {
+                btnElement.innerText = "COPIED! ✓";
+                btnElement.classList.add("copied");
+                setTimeout(() => {
+                    btnElement.innerText = "Click to Copy";
+                    btnElement.classList.remove("copied");
+                }, 2000);
+            });
+        }
+    </script>
 </body>
 </html>
