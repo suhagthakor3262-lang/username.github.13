@@ -77,6 +77,87 @@
                 <input type="text" class="vip-search-input" id="vipSearchField" placeholder="Search any yono game..." onkeyup="filterApps()">
                 <button class="vip-search-btn" onclick="filterApps()">🔍</button>
             </div>
+            /* Abstract blue decoration - Footer ke upar */
+.footer-art {
+  width: 100%;
+  height: 90px;
+  margin-bottom: -1px;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* Main abstract shape */
+.footer-art::before {
+  content: "";
+  position: absolute;
+  left: -5%;
+  right: -5%;
+  top: 15px;
+  height: 65px;
+
+  background:
+    linear-gradient(
+      175deg,
+      transparent 0%,
+      rgba(96, 165, 250, 0.18) 15%,
+      rgba(37, 99, 235, 0.30) 30%,
+      rgba(59, 130, 246, 0.20) 48%,
+      rgba(96, 165, 250, 0.28) 65%,
+      transparent 85%
+    );
+
+  clip-path: polygon(
+    0% 35%,
+    8% 5%,
+    17% 22%,
+    27% 8%,
+    38% 32%,
+    49% 12%,
+    60% 35%,
+    72% 18%,
+    84% 38%,
+    94% 15%,
+    100% 30%,
+    100% 75%,
+    90% 60%,
+    78% 80%,
+    65% 62%,
+    52% 85%,
+    40% 65%,
+    27% 82%,
+    15% 60%,
+    5% 75%,
+    0% 60%
+  );
+
+  opacity: 0.75;
+}
+
+/* हल्की दूसरी layer */
+.footer-art::after {
+  content: "";
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 30px;
+  height: 35px;
+
+  background: rgba(59, 130, 246, 0.12);
+
+  clip-path: polygon(
+    0 45%,
+    15% 10%,
+    30% 55%,
+    45% 15%,
+    60% 60%,
+    75% 20%,
+    90% 50%,
+    100% 25%,
+    100% 65%,
+    0 65%
+  );
+}
 <!-- START: TOP PROMO CODE STRIP SECTION -->
 <style>
     .top-promo-strip {
@@ -524,7 +605,11 @@
                 </div>
             </section>
         </div>
+        <div class="footer-art"></div>
 
+<footer>
+  <!-- Aapka existing footer -->
+</footer>
         <!-- Stable Footer Node -->
         <footer class="vip-footer-node">
             <p>© 2026 ProSafe Yono Games. All rights reserved.</p>
